@@ -14,7 +14,7 @@ module Metriks
 
     def now_floored
       time = Time.now.to_i
-      time - (time % @interval)
+      (time / @interval).to_i * @interval
     end
 
     def next_time
