@@ -76,7 +76,11 @@ module Metriks::Reporter
         end
       end
 
-      submit(form_data(gauges.flatten))
+      gauges = gauges.flatten
+
+      if gauges.any?
+        submit(form_data(gauges))
+      end
     end
 
     def submit(data)
